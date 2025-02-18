@@ -17,7 +17,9 @@ function App() {
   }, [code])
 
   async function reviewCode() {
-    const response = await axios.post(`${import.meta.env.VITE_BASE_URL}`, { code });
+    const response = await axios.post(`${import.meta.env.VITE_BASE_URL}ai/get-review`, { code });
+    // const response = await axios.post('https://code-reviewer-dij2.onrender.com//ai/get-review', { code });
+
     console.log(response.data);
     setReview(response.data);
   }

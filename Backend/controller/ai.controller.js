@@ -1,4 +1,3 @@
-const { response } = require('../app');
 const aiservice=require('../services/ai.service');
 
 module.exports.getReview=async (req,res)=>{

@@ -1,15 +1,16 @@
 const express = require('express');
-const dotenv=require('dotenv')
+const dotenv = require('dotenv');
 dotenv.config();
-const aiRoutes=require('./routes/ai.routes');
-const cors=require('cors');
+const aiRoutes = require('./routes/ai.routes');
+const cors = require('cors');
 
-const app=express();
+const app = express();
 
 app.use(express.json());
-app.use(cors());
+const cors = require("cors"); // Duplicate import
 
-app.use('/ai',aiRoutes);
+app.use(cors({ origin: "*" })); // Allow all origins (for testing)
 
+app.use('/ai', aiRoutes);
 
-module.exports=app;
+module.exports = app;
