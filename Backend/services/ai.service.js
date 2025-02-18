@@ -85,4 +85,7 @@ async function generateContent(prompt)
     return result.response.text();
 }
 
-module.exports = generateContent;
+// module.exports = generateContent;
+module.exports = {
+    generateContent
+};
